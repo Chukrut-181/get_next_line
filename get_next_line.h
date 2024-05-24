@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:39:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/05/22 14:29:48 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:31:05 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_read_to_buffer(int fd);
+char	*ft_add_to_line(char *line, char *to_add);
+size_t	ft_strlen(const char *s);
 void	*ft_calloc(size_t count, size_t size);
 
 #endif
