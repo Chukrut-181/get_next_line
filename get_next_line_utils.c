@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:37:10 by igchurru          #+#    #+#             */
-/*   Updated: 2024/05/23 15:07:52 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:26:47 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	s;
 	void	*dst;
-    size_t  i;
+	size_t	i;
 
 	s = count * size;
 	dst = malloc(s);
 	if (dst == NULL)
 		return (NULL);
-    i = 0;
+	i = 0;
 	while (i < s)
-    {
-        *(unsigned char *)(dst + i) = (unsigned char)0;
-        i++;
-    }
+	{
+		*(unsigned char *)(dst + i) = (unsigned char)0;
+		i++;
+	}
 	return (dst);
 }
 
@@ -41,30 +41,49 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_add_to_line(char *line, char *to_add)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*s;
+	char	*mark;
+
+	mark = NULL;
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+		{
+			mark = (char *)s;
+			return (mark);
+		}
+		else
+			s++;
+	}
+	return (mark);
+}
+
+char	*ft_strjoin(char *storage, char *buffer)
+{
+	char	*s3;
 	size_t	i;
 	size_t	j;
 
-	if (!to_add)
-		return (line);
-	s = ft_calloc((ft_strlen(line) + ft_strlen(to_add) + 1), sizeof(char));
-	if (!s)
+	if (!storage)
+		storage = ft_calloc(1, sizeof(char));
+	if (!storage)
+		return (NULL);
+	s3 = ft_calloc((ft_strlen(storage) + ft_strlen(buffer) + 1), sizeof(char));
+	if (!s3)
 		return (NULL);
 	i = 0;
-	while (line[i])
+	while (storage[i] && storage[i] != '\0')
 	{
-		s[i] = line[i];
+		s3[i] = storage[i];
 		i++;
 	}
 	j = 0;
-	while (to_add[j])
-	{
-		s[i + j] = to_add[j];
-		j++;
-	}
-	free(line);
-	free(to_add);
-	return (s);
+	while (buffer[j] && buffer[j] != '\0')
+		s3[i++] = buffer[j++];
+	s3[ft_strlen(storage) + ft_strlen(buffer)] = '\0';
+	free (storage);
+	return (s3);
 }
