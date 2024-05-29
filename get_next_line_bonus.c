@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:10:04 by igchurru          #+#    #+#             */
-/*   Updated: 2024/05/27 16:13:59 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:18:02 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,22 +95,41 @@ char	*get_next_line(int fd)
 
 /* int	main(int argc, char **argv)
 {
-	int		fd;
+	int		fd[1024];
+	int		i;
 	char	*test_str;
 
-	if (argc != 2)
+	if (argc < 3)
 	{
-		write(1, "Wrong argument count: Must be exactly 2.\n", 41);
+		write(1, "Wrong argument count: Must be al least 3.\n", 41);
 		return (1);
 	}
 	test_str = NULL;
-	fd = open(argv[1], O_RDONLY);
-	while ((test_str = get_next_line(fd)))
+	i = 1;
+	while (i < argc)
 	{
-		printf("Result: %s", test_str);
-		free(test_str);
+		fd[i] = open(argv[i], O_RDONLY);
+		if (fd[i] == -1)
+		{
+			write (1, "Error: Could not open file\n", 27);
+			return (1);
+		}
+		i++;
 	}
-	close (fd);
+	i = 1;
+	while ((test_str = get_next_line(fd[i])))
+	{
+		printf("%i -> %s", i, test_str);
+		free(test_str);
+		i++;
+		if (i == argc)
+			i = 1;
+	}
+	while (1 < argc)
+	{
+		close(fd[argc - 1]);
+		argc--;
+	}
 	return (0);
 } */
-/* cc -Wall -Wextra -Werror get_next_line.c && ./a.out text1.txt */
+/* cc -Wall -Wextra -Werror get_next_line_bonus.c get_next_line_utils.c */

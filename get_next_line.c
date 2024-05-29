@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:36:34 by igchurru          #+#    #+#             */
-/*   Updated: 2024/05/27 16:08:22 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:17:53 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,11 @@ char	*get_next_line(int fd)
 	}
 	test_str = NULL;
 	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		write (1, "Error: Could not open file\n", 27);
+		return (1);
+	}
 	while ((test_str = get_next_line(fd)))
 	{
 		printf("Result: %s", test_str);
