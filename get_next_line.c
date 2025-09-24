@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:36:34 by igchurru          #+#    #+#             */
-/*   Updated: 2024/05/29 14:17:53 by igchurru         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:12:10 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,4 @@ char	*get_next_line(int fd)
 	close (fd);
 	return (0);
 } */
-/* cc -Wall -Wextra -Werror get_next_line.c && ./a.out text1.txt */
+/* cc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c && ./a.out text1.txt */
