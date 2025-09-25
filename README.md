@@ -1,6 +1,6 @@
-get_next_line - File Reading Function | 42 Academy | Score: 125/100 | Completed: May 29th, 2024.
+**get_next_line - File Reading Function | 42 Academy | Score: 125/100 | Completed: May 29th, 2024.**
 
-📋 Project Overview
+📋 **Project Overview**
 
 get_next_line is a crucial 42 Academy project that introduces advanced concepts of static variables, file descriptors, and efficient memory management while handling dynamic buffer allocation.
 Challenge: Read and return one line at a time from a file descriptor, managing memory efficiently with static variables and handling edge cases like varying buffer sizes, empty lines, and large files.  
