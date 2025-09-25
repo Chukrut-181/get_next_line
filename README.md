@@ -11,25 +11,15 @@ Challenge: Read and return one line at a time from a file descriptor, managing m
 - File Descriptor Management: Working with system-level file operations and read() function
 - Dynamic Memory Management: Efficient buffer allocation and reallocation strategies
 - String Manipulation: Advanced string joining and line extraction techniques
-- Buffer Optimization: Handling different BUFFER_SIZE values efficiently
 - Memory Leak Prevention: Proper cleanup of static variables and dynamic allocations
 - Edge Case Mastery: Managing EOF, empty files, single characters, and massive lines
 - Algorithmic Thinking: Designing efficient line-by-line reading without reading entire files
-- Code Architecture: Building clean, maintainable solutions with helper functions
 
 🚀 **Learning Outcomes**
 
 - System Programming: Deep understanding of file I/O operations at system level
 - Memory Optimization: Balancing memory usage with performance for large file processing
 - Research Methodology: Learning to compare multiple implementations and choosing optimal solutions
-- Code Analysis: Understanding that "copying from many sources becomes documentation and learning"
-
-🌱 **Personal Growth**
-
-- Solution Comparison: Developed methodology for analyzing and comparing different coding approaches
-- Independent Research: Enhanced ability to study multiple implementations and synthesize best practices
-- Testing Rigor: Built comprehensive testing strategies for various file types and buffer sizes
-- Code Selection: Learned to choose implementations based on technical merit and personal understanding
 
 🛠️ **Technical Specifications**
 
@@ -38,9 +28,8 @@ Challenge: Read and return one line at a time from a file descriptor, managing m
 - Code Standard: 42 Norminette compliance
 - External Functions: read, malloc, free
 - Architecture: Static variable management with helper function support
-- Bonus Features: Multiple file descriptor handling (125/100 score achievement)
 
-🎓 Academic Recognition
+🎓 **Academic Recognition**
 
 - Final Score: 125/100 (Bonus completed - multiple file descriptors)
 - Evaluation: Passed rigorous peer evaluation with advanced functionality
